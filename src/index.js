@@ -3,7 +3,7 @@ import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import './styles.css';
-const axios = require('axios');
+// const axios = require('axios');
 
 const form = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
