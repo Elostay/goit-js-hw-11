@@ -1,0 +1,104 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+a {
+	text-decoration: none;
+	color: #2a2a2a;
+}
+ul,
+ol {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+:root {
+}
+button {
+	cursor: pointer;
+	border: none;
+	padding: 0;
+}
+
+input {
+	font-family: inherit;
+}
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+/*-------------Не обнуляючі але треба задати ці властивості(приклад того що потрібно вказати)---------------------*/
+body {
+	font-family: "Helvetica Neue", "Roboto", "Verdana", sans-serif;
+	color: #2a2a2a;
+	background-color: #fafafa;
+	line-height: 1.5;
+}
+/*-------------Якщо шрифти різні-------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Tahoma";
+}
+img {
+}
+button {
+	background-color: blanchedalmond;
+	padding: 10px;
+	border-radius: 30px;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	padding: 15px;
+	margin: 0 auto;
+}
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.thumb {
+	height: 400px;
+}
+.gallery a {
+	height: 552px;
+	width: calc((100% - 20px) / 3);
+}
+.thumb img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.info {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	gap: 10px 30px;
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.search-form {
+	margin-bottom: 40px;
+}
