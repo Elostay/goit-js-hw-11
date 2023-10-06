@@ -1,9 +1,9 @@
 import Notiflix from 'notiflix';
 import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
+import createMarkup from './createMarkup';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import './styles.css';
-// const axios = require('axios');
 
 const form = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
@@ -60,7 +60,7 @@ async function onSubmit(e) {
   e.preventDefault();
   currentPage = 1;
   searchQuery = form.elements.searchQuery.value;
-  if (form.elements.searchQuery.value === '') {
+  if (searchQuery.trim() === '') {
     return Notiflix.Notify.warning('Enter something');
   }
 
@@ -91,42 +91,4 @@ function getTrending() {
     page: currentPage,
   });
   return axios.get(`${BASE_URL}?${params}`);
-}
-
-function createMarkup(dataArray) {
-  return dataArray
-    .map(
-      ({
-        webformatURL,
-        largeImageURL,
-        tags,
-        likes,
-        views,
-        comments,
-        downloads,
-      }) => {
-        return `<a href="${largeImageURL}"><div class="photo-card">
-		  
-		  <div class="thumb">
-
-  <img src="${webformatURL}" alt="${tags}" loading="lazy" /></div>
-  <div class="info">
-    <p class="info-item">
-      <b>Likes: ${likes}</b>
-    </p>
-    <p class="info-item">
-      <b>Views: ${views}</b>
-    </p>
-    <p class="info-item">
-      <b>Comments: ${comments}</b>
-    </p>
-    <p class="info-item">
-      <b>Downloads: ${downloads}</b>
-    </p>
-  </div>
-  
-</div></a>`;
-      }
-    )
-    .join('');
 }
